@@ -30,64 +30,43 @@
       </div>            
     </div>
 
-    <div class="row" style="padding: 1rem;">
+    <div class="row align-content-center" style="padding: 0%; margin: 0%;">
       <div class="col-md-3 offset-md-3">
         PLAYER 1
       </div>
+
       <div class="col-md-3 offset-md-2">
         COM
       </div>
     </div>
 
-    <!--row batu-->
-    <div class="row" style="padding: 1rem;">
-      <div class="col-md-2 offset-md-3">
-        <img class="upper-suit" src="./assets/games/batu.png">
+    <div class="row" style="align-items:center"> 
+      <div class="pemain">
+        <img class="suit" src="./assets/games/batu.png">
+        <img class="suit" src="./assets/games/gunting.png">
+        <img class="suit" src="./assets/games/kertas.png">
       </div>
-      <div class="col-md-2 offset-md-3">
-        <img class="upper-suit" src="./assets/games/batu.png" value="BATU" onclick="choose(this);">
+      
+      <div class="pemain">
+        <img class="suit" src="./assets/games/refresh.png">
       </div>
-    <!--end of row batu-->
+    
 
-    <!--row gunting-->
-    <div class="row" style="padding: 1rem">
-        <div class="col-md-2 offset-md-3">
-          <img class="upper-suit" src="./assets/games/gunting.png">
-        </div>
 
-        <!--VS-->
-        <div class="col-md-2 offset-1">
-          vs
-        </div>
-        <!--end of VS-->
+      <div class="pemain">
+        <img class="suit" src="./assets/games/batu.png" value="BATU" onclick="choose(this);">
+        <img class="suit" src="./assets/games/gunting.png" value="BATU" onclick="choose(this);">
+        <img class="suit" src="./assets/games/kertas.png" value="BATU" onclick="choose(this);">
+      </div>
 
-        <div class="col-md-2">
-          <img class="upper-suit" src="./assets/games/gunting.png" value="GUNTING" onclick="choose(this);">
-        </div>
+      
     </div>
-    <!--end of row gunting-->
 
-    <!--row kertas-->
-    <div class="row" style="padding: 1rem;">
-      <div class="col-md-2 offset-md-3">
-        <img class="upper-suit" src="./assets/games/kertas.png">
-      </div>
-      <div class="col-md-2 offset-md-3">
-        <img class="upper-suit" src="./assets/games/kertas.png" value="KERTAS" onclick="choose(this);">
-      </div>
-    </div>
-    <!--end of row kertas-->
-
-    <!--row refresh-->
-    <div class="row" style="padding: 0rem;">
-      <div class="col-md-1 offset-md-6">
-        <img class="upper-suit" src="./assets/games/refresh.png">
-      </div>
-    </div>
-    <!--end of row refresh-->
-
-
+      
   </div>
+   
+
+    
 
 
   <script choose src="./assets/js/game-suit.js"></script>

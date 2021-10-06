@@ -253,13 +253,51 @@ ul.timeline-1 > li:before {
     padding: 0;    
 }
 
-.upper-suit{
+.suit,.upper-suit{
     border-radius: 0%;
-    max-width: 50%;
+    max-width: 60%;
     height: auto;
     padding: 0%;
 }
 
 .container-fluid{
     height: fit-content;
+}
+
+.com,.pemain{
+    flex:0 0 10;width:15%;
+    align-content:flex-end;
+    
+}
+
+body { 
+    width: 100%; 
+    height: 100%; 
+    margin: 0 auto; 
+    align-content: center; }
+
+
+@media(max-width:750px){
+    .pemain{
+        flex-direction: row;
+        flex:0 0 auto;width:85%;
+        padding-left: 5rem;
+    }
+    
+    .suit{
+        border-radius: 0%;
+        max-width: 30%;
+        height: auto;
+        padding: 0%;
+    }
+
+  
+    .upper-suit{
+        border-radius: 0%;
+        max-width: 15%;
+        height: auto;
+        padding: 0%;
+    }
+    
+
 }

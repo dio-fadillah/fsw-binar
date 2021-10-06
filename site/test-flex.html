@@ -1,0 +1,386 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: "Open Sans", sans-serif;
+    padding: 40px;
+    background-color: white;
+    color: black;
+  }
+  
+  header {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  
+  .container {
+    margin: 40px 0;
+  }
+  
+  .wrapper {
+    height: 400px;
+    padding: 10px;
+    background-color: slategray;
+    margin: 10px 0;
+  }
+  
+  .box {
+    height: 80px;
+    width: 80px;
+    background-color: whitesmoke;
+    margin: 10px;
+  }
+  
+  .box-2 {
+    height: 60px;
+    width: 60px;
+    background-color: whitesmoke;
+    margin: 10px;
+  }
+  
+  .box-3 {
+    height: 40px;
+    width: 40px;
+    background-color: whitesmoke;
+    margin: 10px;
+  }
+  
+  /* Horizontal Row */
+  .wrapper-1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  /* Vertical Row */
+  .wrapper-2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  /* Horizontal & Vertical Row */
+  .wrapper-3 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Horizontal Column */
+  .wrapper-4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Vertical Column */
+  .wrapper-5 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  /* Horizontal & Vertical Column */
+  .wrapper-6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Vertical Row Align Self */
+  .wrapper-7 {
+    display: flex;
+  }
+  
+  .wrapper-7 div {
+    align-self: center;
+  }
+  
+  /* Horizontal Column Align Self */
+  .wrapper-8 {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .wrapper-8 div {
+    align-self: center;
+  }
+  
+  /* Horizontal Reverse Row */
+  .wrapper-9 {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+  }
+  
+  /* Vertical Reverse Row */
+  .wrapper-10 {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+  
+  /* Horizontal Reverse Column */
+  .wrapper-11 {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  
+  /* Vertical Reverse Column */
+  .wrapper-12 {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+  
+  /* Nested Example 1 */
+  .wrapper-13 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .inner-container-13 {
+    display: flex;
+    align-items: center;
+    background-color: darkgray;
+  }
+  
+  /* Nested Example 2 */
+  .wrapper-14 {
+    display: flex;
+    align-items: center;
+  }
+  
+  .inner-container-14 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: darkgray;
+  }
+  
+
+</style>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <title>5 CSS Centering Techniques with Flexbox</title>
+  </head>
+  <body>
+    <header>
+      <h1>CSS Centering with Flexbox</h1>
+    </header>
+
+    <div class="container">
+      <h2>Flexbox | Align Items & Justify Content</h2>
+    </div>
+
+    <div class="container">
+      <h3>Horizontal | Row Single Item</h3>
+      <div class="wrapper wrapper-1">
+        <div class="box"></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h3>Horizontal | Row Multiple Items</h3>
+      <div class="wrapper wrapper-1">
+        <div class="box"></div>
+        <div class="box-2"></div>
+        <div class="box-3"></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h3>Vertical | Row Single Item</h3>
+      <div class="wrapper wrapper-2">
+        <div class="box"></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h3>Vertical | Row Multiple Items</h3>
+      <div class="wrapper wrapper-2">
+        <div class="box"></div>
+        <div class="box-2"></div>
+        <div class="box-3"></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h3>Horizontal & Vertical | Row Single Item</h3>
+      <div class="wrapper wrapper-3">
+        <div class="box"></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h3>Horizontal & Vertical | Row Multiple Items</h3>
+      <div class="wrapper wrapper-3">
+        <div class="box"></div>
+        <div class="box-2"></div>
+        <div class="box-3"></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h3>Horizontal | Column Single Item</h3>
+      <div class="wrapper wrapper-4">
+        <div class="box"></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h3>Horizontal | Column Multiples Items</h3>
+      <div class="wrapper wrapper-4">
+        <div class="box"></div>
+        <div class="box-2"></div>
+        <div class="box-3"></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h3>Vertical | Column Single Item</h3>
+      <div class="wrapper wrapper-5">
+        <div class="box"></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h3>Vertical | Column Multiple Items</h3>
+      <div class="wrapper wrapper-5">
+        <div class="box"></div>
+        <div class="box-2"></div>
+        <div class="box-3"></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h3>Horizontal & Vertical | Column Single Item</h3>
+      <div class="wrapper wrapper-6">
+        <div class="box"></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h3>Horizontal & Vertical | Column Multiple Items</h3>
+      <div class="wrapper wrapper-6">
+        <div class="box"></div>
+        <div class="box-2"></div>
+        <div class="box-3"></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h2>Flexbox | Align Self</h2>
+    </div>
+
+    <div class="container">
+      <h3>Vertical | Row Single Item</h3>
+      <div class="wrapper wrapper-7">
+        <div class="box"></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h3>Horizontal | Column Single Item</h3>
+      <div class="wrapper wrapper-8">
+        <div class="box"></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h2>Flexbox | Reverse Column & Rows</h2>
+    </div>
+
+    <div class="container">
+      <h3>Horizontal | Reverse Row Multiple Items</h3>
+      <div class="wrapper wrapper-9">
+        <div class="box"></div>
+        <div class="box-2"></div>
+        <div class="box-3"></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h3>Vertical | Reverse Row Multiple Items</h3>
+      <div class="wrapper wrapper-10">
+        <div class="box"></div>
+        <div class="box-2"></div>
+        <div class="box-3"></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h3>Horizontal | Reverse Column Multiple Items</h3>
+      <div class="wrapper wrapper-11">
+        <div class="box"></div>
+        <div class="box-2"></div>
+        <div class="box-3"></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h3>Vertical | Reverse Column Multiple Items</h3>
+      <div class="wrapper wrapper-12">
+        <div class="box"></div>
+        <div class="box-2"></div>
+        <div class="box-3"></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h2>Flexbox | Nested Examples</h2>
+    </div>
+
+    <div class="container">
+      <h3>Horizontal | Nested Multiple Items</h3>
+      <div class="wrapper wrapper-13">
+        <div class="inner-container-13">
+          <div class="box"></div>
+          <div class="box-2"></div>
+          <div class="box-3"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h3>Vertical | Nested Multiple Items</h3>
+      <div class="wrapper wrapper-14">
+        <div class="inner-container-14">
+          <div class="box"></div>
+          <div class="box-2"></div>
+          <div class="box-3"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+      
+</body>
+</html>

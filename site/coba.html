@@ -1,0 +1,300 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suit-Jawa-Ceunah</title>
+    <link rel="shortcut icon" type="image/png" href="./assets/img/favicon.ico"/>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" type="text/css" />
+    <script src="assets/js/bootstrap.js"></script>
+    <script src="./assets/js/jquery.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+<style>
+
+#vs.mid{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 5rem;
+}
+
+#com.box-3{
+  margin-left: 42%;
+}
+
+#player.box-2{
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  margin-left:20%;
+}
+#com.box-2{
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  margin-left: 45%;
+}
+
+
+#ref.box{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#kembali.box-2{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 2rem;
+  margin-right: 1rem;
+}
+
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: left;
+  background-color: brown;
+}
+
+.wrapper-2 {
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+}
+
+
+  
+
+.wrapper {
+    width: 100%;
+    background-color: slategray;
+    /*margin: 10px 0;*/
+}
+
+  .nav-game {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+  
+  .wrapper-3 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1rem;
+}
+
+/*playing area*/
+.container-game {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  width: fit-content;
+  margin-right: 15%;
+}
+
+.com {
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  width: fit-content;
+  margin-left: 15%;
+}
+
+.mid {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  width: fit-content;  
+}
+
+.refresh {
+  display: flex;
+  flex-direction: row;
+  height: fit-content;
+  width: fit-content;
+  justify-content: center;
+  margin-left: -7%;
+
+}
+/*end playing area*/
+  
+  .box-2 {
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    width: fit-content;
+    background-color: whitesmoke;
+
+  }
+  
+  .box-3 {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 10%;
+    background-color: whitesmoke;
+    margin-left: 20%;
+  }
+
+
+.suit{
+    border-radius: 0%;
+    max-width:6rem;
+    height: auto;
+    padding: 0%;
+    align-content: center;
+}
+
+.upper-suit{
+    border-radius: 0%;
+    max-width:4rem;
+    height: auto;
+    padding: 0%;
+    align-content: center;
+}
+
+@media(max-width:750px){
+  .user {
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    width: 100%;
+    background-color: whitesmoke;
+    justify-content: center;
+    margin-right: 0%;
+    padding-top: 2rem;
+  }
+
+  .com {
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    width: 100%;
+    background-color: whitesmoke;
+    justify-content: center;
+    margin-left: 0%;
+    padding-bottom: 2rem;
+  }
+
+  .mid {
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    width: 100%;
+    background-color: whitesmoke;
+    justify-content: center;
+    margin-left: 0%;    
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  .wrapper,.wrapper-3{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .suit,.upper-suit{
+    border-radius: 0%;
+    max-width:4rem;
+    height: auto;
+    padding: 0%;
+    align-content: center;
+  
+  }
+    .upper-suit{
+    border-radius: 0%;
+    max-width:2rem;
+    height: auto;
+    padding: 0%;
+    align-content: center;
+}
+}
+
+
+</style>
+<body>
+  <div class="container-fluid">
+    <div class="wrapper-2">
+      <div class="box-2" id="kembali">
+       <a href="index.html"><ion-icon name="arrow-back-outline" size="large"></ion-icon></a>
+      </div>
+
+      <div class="box-2">
+        <img class="upper-suit" src="./assets/games/favpng_rock-paper-scissors-steemit-logo.png">
+      </div><div class="wrapper-2"></div>
+
+      <div class="box-2" id="kembali">Suit Jawa</div>
+
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="wrapper-2" >
+      <div class="box-2" id="player">
+        player
+      </div>
+
+      <div class="box-2" id="com">com</div>
+
+    </div>
+  </div>
+  
+  
+
+  <div class="container-game">
+    <div class="wrapper wrapper-3">
+      <div class="user">
+        Player
+        <img class="suit" src="./assets/games/batu.png">
+        <img class="suit" src="./assets/games/gunting.png">
+        <img class="suit" src="./assets/games/kertas.png">
+      </div>
+
+      <div class="mid"> 
+        <div class="box-2" id="ref">
+          <img class ="suit" src="assets/games/refresh.png">
+        </div>  
+      </div>       
+
+      <div class="com">
+        COM
+        <img class="suit" src="./assets/games/batu.png">
+        <img class="suit" src="./assets/games/gunting.png">
+        <img class="suit" src="./assets/games/kertas.png">
+      </div>   
+    </div>
+  </div>
+
+  <div class="container-game">
+    <div class="wrapper wrapper-3">
+      <div class="refresh">
+        <div class="box-2" id="ref">
+          <img class ="suit" src="assets/games/refresh.png">
+        </div>  
+      </div>   
+  </div>
+
+</body>
+</html>
