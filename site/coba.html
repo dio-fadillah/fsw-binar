@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suit-Jawa-Ceunah</title>
+    <title>Game Suitan</title>
     <link rel="shortcut icon" type="image/png" href="./assets/img/favicon.ico"/>
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css" type="text/css" />
     <script src="assets/js/bootstrap.js"></script>
@@ -178,6 +178,7 @@
   align-content: center;
 }
 
+
 @media(max-width:750px){
   .user {
     display: flex;
@@ -259,7 +260,7 @@
         <img class="upper-suit" src="./assets/games/favpng_rock-paper-scissors-steemit-logo.png">
       </div><div class="wrapper-2"></div>
 
-      <div class="box-2" id="kembali">Suit Jawa</div>
+      <div class="box-2" id="kembali">Game Suitan</div>
 
     </div>
   </div>
@@ -271,36 +272,36 @@
     <div class="wrapper wrapper-3">
       <div class="user">
         Player
-        <div class="box-3">
-          <img class="suit" src="./assets/games/batu.png">
+        <div class="box-3" id="batu-p">
+          <img class="suit" src="./assets/games/batu.png" value="BATU" onclick="choose(this)" id="batu-p-click">
         </div>
 
-        <div class="box-3">
-          <img class="suit" src="./assets/games/gunting.png">
+        <div class="box-3" id="gunting-p">
+          <img class="suit" src="./assets/games/gunting.png" value="GUNTING" onclick="choose(this)" id="gunting-p-click">
         </div>
 
-        <div class="box-3">
-          <img class="suit" src="./assets/games/kertas.png">
+        <div class="box-3" id="kertas-p">
+          <img class="suit" src="./assets/games/kertas.png" value="KERTAS" onclick="choose(this)" id="kertas-p-click">
         </div>
       </div>
 
       <div class="mid"> 
-        <div class="box-2" id="ref">
+        <div class="box-2" id="vs">
           <img class ="suit" src="assets/games/refresh.png">
         </div>  
       </div>       
 
       <div class="com">
         COM
-        <div class="box-3">
+        <div class="box-3" id="batu-c">
           <img class="suit" src="./assets/games/batu.png">
         </div>
 
-        <div class="box-3">
+        <div class="box-3" id="gunting-c">
           <img class="suit" src="./assets/games/gunting.png">
         </div>
 
-        <div class="box-3">
+        <div class="box-3" id="kertas-c">
           <img class="suit" src="./assets/games/kertas.png">
         </div>
       </div>   
@@ -311,10 +312,15 @@
     <div class="wrapper wrapper-3">
       <div class="refresh">
         <div class="box-2" id="ref">
-          <img class ="ref-btn" src="assets/games/refresh.png">
+          <img class ="ref-btn" src="assets/games/refresh.png" value="refresh" onclick="ulang(this)" id="refresh-p-click">
         </div>  
       </div>   
   </div>
+
+
+  <script choose src="./assets/js/game-suit.js"></script>
+  <script ulang src="./assets/js/game-suit.js"></script>
+
 
 </body>
 </html>
