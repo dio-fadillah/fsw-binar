@@ -56,15 +56,18 @@ function choose(element){
 
     //logic game suitnynya
     if (player == com_choose){
-        alert("hasil seri" + "Player = " + player + "Computer = " + com_choose);
+        document.getElementById("hasil").classList.remove('result');
+        document.getElementById("hasil").classList.add('draw');
         
     } else if (
         (player == "BATU" && com_choose == "GUNTING") || (player == "GUNTING" && com_choose == "KERTAS") || (player == "KERTAS" && com_choose == "BATU")
         ){
-        alert("Player Menang " + "Player = " + player + "Computer = " + com_choose);
+        document.getElementById("hasil").classList.remove('result');
+        document.getElementById("hasil").classList.add('pwin');
         
     } else {
-        alert("Player Kalah " + "Player = " + player + "Computer = " + com_choose);
+        document.getElementById("hasil").classList.remove('result');
+        document.getElementById("hasil").classList.add('cwin');
        
     }
 } 
@@ -74,15 +77,20 @@ function ulang(element){
         document.getElementById("kertas-p").style.pointerEvents = 'auto';
         document.getElementById("batu-p").style.pointerEvents = 'auto';
 
-        document.getElementById("batu-p").style.backgroundColor = "white";
-        document.getElementById("gunting-p").style.backgroundColor = "white";
-        document.getElementById("kertas-p").style.backgroundColor = "white";
+        document.getElementById("batu-p").style.backgroundColor = "whitesmoke";
+        document.getElementById("gunting-p").style.backgroundColor = "whitesmoke";
+        document.getElementById("kertas-p").style.backgroundColor = "whitesmoke";
         
-        document.getElementById("batu-c").style.backgroundColor = "white";
-        document.getElementById("gunting-c").style.backgroundColor = "white";
-        document.getElementById("kertas-c").style.backgroundColor = "white";
-    
-        
+        document.getElementById("batu-c").style.backgroundColor = "whitesmoke";
+        document.getElementById("gunting-c").style.backgroundColor = "whitesmoke";
+        document.getElementById("kertas-c").style.backgroundColor = "whitesmoke";
+
+        document.getElementById("hasil").classList.remove('draw');
+        document.getElementById("hasil").classList.remove('pwin');
+        document.getElementById("hasil").classList.remove('cwin');
+
+        document.getElementById("hasil").classList.add('result');
+   
     }
 
 

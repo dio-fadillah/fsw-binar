@@ -6,7 +6,6 @@
     <title>Game Suitan</title>
     <link rel="shortcut icon" type="image/png" href="./assets/img/favicon.ico"/>
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css" type="text/css" />
-    <script src="assets/js/bootstrap.js"></script>
     <script src="./assets/js/jquery.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles.css" />
@@ -39,6 +38,16 @@
   margin-left: 45%;
 }
 
+#ref.box-2{
+  display: flex;
+  flex-direction: row;
+  height: fit-content;
+  width: fit-content;
+  background-color: darkgoldenrod;
+  padding-bottom: 1rem;
+  
+}
+
 
 #ref.box{
   display: flex;
@@ -46,7 +55,7 @@
   justify-content: center;
 }
 
-#kembali.box-2{
+#kembali.upper-link{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -54,8 +63,6 @@
   margin-left: 2rem;
   margin-right: 1rem;
 }
-
-
 
 .container {
   display: flex;
@@ -66,39 +73,37 @@
 }
 
 .wrapper-2 {
-    display: flex;
-    flex-direction: row;
-    align-items: left;
+  display: flex;
+  flex-direction: row;
+  align-items: left;
 }
 
 .wrapper {
-    width: 100%;
-    background-color: slategray;
-    /*margin: 10px 0;*/
+  width: 100%;
+  background-color:darkgoldenrod;
 }
 
-  .nav-game {
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
+.nav-game {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
 }
   
-  .wrapper-3 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding-top: 1rem;
+.wrapper-3 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1rem;
 }
 
 /*playing area*/
 .container-game {
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .user {
@@ -133,27 +138,33 @@
 }
 /*end playing area*/
   
-  .box-2 {
-    display: flex;
-    flex-direction: row;
-    height: fit-content;
-    width: fit-content;
-    background-color: whitesmoke;
+.box-2 {
+  display: flex;
+  flex-direction: row;
+  height: fit-content;
+  width: fit-content;
+  background-color: darkgoldenrod;
+}
 
-  }
+.upper-link {
+  display: flex;
+  flex-direction: row;
+  height: fit-content;
+  width: fit-content;
+}
   
-  .box-3 {
-    display: flex;
-    flex-direction: row;
-    height: 8rem;
-    width: 8rem;
-    border-radius: 10%;
-    background-color: whitesmoke;
-    margin-left: 20%;
-    padding-left: 1rem;
-    padding-top: 1rem;
-    margin-top: 1rem;
-  }
+.box-3 {
+  display: flex;
+  flex-direction: row;
+  height: 8rem;
+  width: 8rem;
+  border-radius: 10%;
+  background-color: whitesmoke;
+  margin-left: 20%;
+  padding-left: 1rem;
+  padding-top: 1rem;
+  margin-top: 1rem;
+}
 
 
 .suit{
@@ -164,11 +175,11 @@
 }
 
 .upper-suit{
-    border-radius: 0%;
-    max-width:4rem;
-    height: auto;
-    padding: 0%;
-    align-content: center;
+  border-radius: 0%;
+  max-width:4rem;
+  height: auto;
+  padding: 0%;
+  align-content: center;
 }
 
 .ref-btn{
@@ -176,8 +187,57 @@
   max-width:2rem;
   height: 2rem;
   align-content: center;
+  background-color: transparent;
 }
 
+.result {
+  display: flex;
+  flex-direction: row;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 10%;
+  background-color: whitesmoke;
+
+}
+
+.draw {
+  display: flex;
+  flex-direction: row;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 10%;
+  background-color: whitesmoke;
+  background: url(./assets/games/kertas.png);
+
+}
+
+.pwin {
+  display: flex;
+  flex-direction: row;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 10%;
+  background-color: whitesmoke;
+  background: url(./assets/img/player-win.png);
+
+
+}
+
+.cwin {
+  display: flex;
+  flex-direction: row;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 10%;
+  background-color: whitesmoke; 
+  background: url(./assets/games/batu.png);
+}
+
+p{
+  color:whitesmoke;
+  font-weight: bold;
+  font-size: 1rem;
+}
 
 @media(max-width:750px){
   .user {
@@ -210,6 +270,7 @@
     padding-top: 2rem;
     padding-bottom: 2rem;
   }
+
   .wrapper,.wrapper-3{
     display: flex;
     flex-direction: column;
@@ -224,15 +285,14 @@
     height: 3rem;
     padding: 0%;
     align-content: center;
-  
   }
     .upper-suit{
     border-radius: 0%;
-    max-width:2rem;
+    max-width: 2rem;
     height: auto;
     padding: 0%;
     align-content: center;
-}
+  }
 
 .box-3 {
     display: flex;
@@ -245,23 +305,33 @@
     padding-top: 1rem;
     margin-left: 1rem;
   }
-}
 
+  #kembali.box-2{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .p{
+    font-size: 5px;
+  }
+}
 
 </style>
 <body>
-  <div class="container-fluid" style="background-color: black;">
+  <div class="container-fluid" style="background-color:black; opacity: 0.8;">
     <div class="wrapper-2">
-      <div class="box-2" id="kembali">
+      <div class="upper-link" id="kembali">
        <a href="index.html"><ion-icon name="arrow-back-outline" size="large"></ion-icon></a>
       </div>
 
-      <div class="box-2">
+      <div class="upper-link">
         <img class="upper-suit" src="./assets/games/favpng_rock-paper-scissors-steemit-logo.png">
       </div><div class="wrapper-2"></div>
 
-      <div class="box-2" id="kembali">Game Suitan</div>
-
+      <div class="upper-link" style="margin-top: 1rem;" id="kembali"><p>ROCK PAPER SCISSOR</p></div>
     </div>
   </div>
 
@@ -271,39 +341,36 @@
   <div class="container-game">
     <div class="wrapper wrapper-3">
       <div class="user">
-        Player
+        <p>PLAYER</p>
         <div class="box-3" id="batu-p">
-          <img class="suit" src="./assets/games/batu.png" value="BATU" onclick="choose(this)" id="batu-p-click">
-        </div>
-
-        <div class="box-3" id="gunting-p">
-          <img class="suit" src="./assets/games/gunting.png" value="GUNTING" onclick="choose(this)" id="gunting-p-click">
+          <img class="suit" src="./assets/games/batu.png" value="BATU" onclick="choose(this)">
         </div>
 
         <div class="box-3" id="kertas-p">
-          <img class="suit" src="./assets/games/kertas.png" value="KERTAS" onclick="choose(this)" id="kertas-p-click">
+          <img class="suit" src="./assets/games/kertas.png" value="KERTAS" onclick="choose(this)">
+        </div>
+
+        <div class="box-3" id="gunting-p">
+          <img class="suit" src="./assets/games/gunting.png" value="GUNTING" onclick="choose(this)">
         </div>
       </div>
 
       <div class="mid"> 
-        <div class="box-2" id="vs">
-          <img class ="suit" src="assets/games/refresh.png">
-        </div>  
+        <div class="result" id="hasil"><img src="./assets/img/player-win.png"></div>
       </div>       
 
       <div class="com">
-        COM
+        <p>COM</p>
         <div class="box-3" id="batu-c">
           <img class="suit" src="./assets/games/batu.png">
-        </div>
-
-        <div class="box-3" id="gunting-c">
-          <img class="suit" src="./assets/games/gunting.png">
         </div>
 
         <div class="box-3" id="kertas-c">
           <img class="suit" src="./assets/games/kertas.png">
         </div>
+
+        <div class="box-3" id="gunting-c">
+          <img class="suit" src="./assets/games/gunting.png">
       </div>   
     </div>
   </div>
