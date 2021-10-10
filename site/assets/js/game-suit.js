@@ -44,8 +44,6 @@ function choose(element){
         kertas_c.style.backgroundColor = "gold";        
     }
 
-    
-
     //logic game suitnynya
     if (player == com_choose){
         play_result.classList.add('draw');
