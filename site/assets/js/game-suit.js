@@ -1,95 +1,92 @@
-var player = ""
-var com_choose = ""
-var bg_choose_c = ""
-var bg_choose_p = ""
-var prevent_click = ""
-var reset = ""
-var reset_click =""
+var gunting_c = document.getElementById("gunting-c")
+var batu_c = document.getElementById("batu-c")
+var kertas_c = document.getElementById("kertas-c")
+
+var gunting_p = document.getElementById("gunting-p")
+var batu_p = document.getElementById("batu-p")
+var kertas_p = document.getElementById("kertas-p")
+var play_result = document.getElementById("hasil");
 
 function choose(element){
     player = (element.getAttribute("value"));
     com = Math.floor(Math.random() * 101);
 
     if (player == "BATU"){
-        bg_choose_p = document.getElementById("batu-p");
-        bg_choose_p.style.backgroundColor = "gold";
-        document.getElementById("gunting-p").style.pointerEvents = 'none';
-        document.getElementById("kertas-p").style.pointerEvents = 'none';
-        document.getElementById("batu-p").style.pointerEvents = 'none';
+        batu_p.style.backgroundColor = "gold";
+        gunting_p.style.pointerEvents = 'none';
+        kertas_p.style.pointerEvents = 'none';
+        batu_p.style.pointerEvents = 'none';
 
     }else if(player == "GUNTING"){
-        bg_choose_p = document.getElementById("gunting-p");
-        bg_choose_p.style.backgroundColor = "gold";
-        document.getElementById("gunting-p").style.pointerEvents = 'none';
-        document.getElementById("kertas-p").style.pointerEvents = 'none';
-        document.getElementById("batu-p").style.pointerEvents = 'none';
+        gunting_p.style.backgroundColor = "gold";
+        gunting_p.style.pointerEvents = 'none';
+        kertas_p.style.pointerEvents = 'none';
+        batu_p.style.pointerEvents = 'none';
 
     }else{
-        bg_choose_p = document.getElementById("kertas-p");
-        bg_choose_p.style.backgroundColor = "gold";
-        document.getElementById("gunting-p").style.pointerEvents = 'none';
-        document.getElementById("kertas-p").style.pointerEvents = 'none';
-        document.getElementById("batu-p").style.pointerEvents = 'none';
+        kertas_p.style.backgroundColor = "gold";
+        gunting_p.style.pointerEvents = 'none';
+        kertas_p.style.pointerEvents = 'none';
+        batu_p.style.pointerEvents = 'none';
     }
 
     //ambil pilihan computer
     if (com <= 33 && com >0) {
-        console.log("Pilihan dari COM adalah BATU " + "value " + com);
         com_choose = "BATU"
-        bg_choose_c = document.getElementById("batu-c");
-        bg_choose_c.style.backgroundColor = "gold";
+        batu_c.style.backgroundColor = "gold";
         
     } else if (com >33 && com<=66){
-        console.log("Pilihan dari COM adalah GUNTING " + "value " + com);
         com_choose = "GUNTING"
-        bg_choose_c = document.getElementById("gunting-c");
-        bg_choose_c.style.backgroundColor = "gold";
+        gunting_c.style.backgroundColor = "gold";
        
     } else {
-        console.log("Pilihan dari COM adalah KERTAS " + "value " + com);
         com_choose = "KERTAS"
-        bg_choose_c = document.getElementById("kertas-c");
-        bg_choose_c.style.backgroundColor = "gold";        
+        kertas_c.style.backgroundColor = "gold";        
     }
 
     
 
     //logic game suitnynya
     if (player == com_choose){
-        document.getElementById("hasil").classList.remove('result');
-        document.getElementById("hasil").classList.add('draw');
+        play_result.classList.add('draw');
+        play_result.innerHTML = "DRAW";
+        console.log("Pilihan dari COM adalah " + com_choose + " random com value " + com + " dan Player Pilih " + player + " hasil main seri");
         
     } else if (
         (player == "BATU" && com_choose == "GUNTING") || (player == "GUNTING" && com_choose == "KERTAS") || (player == "KERTAS" && com_choose == "BATU")
         ){
-        document.getElementById("hasil").classList.remove('result');
-        document.getElementById("hasil").classList.add('pwin');
+        play_result.classList.remove('result');
+        play_result.classList.add('pwin');
+        play_result.innerHTML = "PLAYER 1 WIN";
+        console.log("Pilihan dari COM adalah " + com_choose + " random com value " + com + " dan Player Pilih " + player + " hasil main player menang");
         
     } else {
-        document.getElementById("hasil").classList.remove('result');
-        document.getElementById("hasil").classList.add('cwin');
-       
+        play_result.classList.remove('result');
+        play_result.classList.add('cwin');
+        play_result.innerHTML = "COM WIN";
+        console.log("Pilihan dari COM adalah " + com_choose + " random com value " + com + " dan Player Pilih " + player + " hail main computer menang");       
     }
 } 
 
-function ulang(element){
-        document.getElementById("gunting-p").style.pointerEvents = 'auto';
-        document.getElementById("kertas-p").style.pointerEvents = 'auto';
-        document.getElementById("batu-p").style.pointerEvents = 'auto';
+function refresh(element){
+        gunting_p.style.pointerEvents = 'auto';
+        kertas_p.style.pointerEvents = 'auto';
+        batu_p.style.pointerEvents = 'auto';
 
-        document.getElementById("batu-p").style.backgroundColor = "whitesmoke";
-        document.getElementById("gunting-p").style.backgroundColor = "whitesmoke";
-        document.getElementById("kertas-p").style.backgroundColor = "whitesmoke";
+        batu_p.style.backgroundColor = "whitesmoke";
+        gunting_p.style.backgroundColor = "whitesmoke";
+        kertas_p.style.backgroundColor = "whitesmoke";
         
-        document.getElementById("batu-c").style.backgroundColor = "whitesmoke";
-        document.getElementById("gunting-c").style.backgroundColor = "whitesmoke";
-        document.getElementById("kertas-c").style.backgroundColor = "whitesmoke";
+        batu_c.style.backgroundColor = "whitesmoke";
+        gunting_c.style.backgroundColor = "whitesmoke";
+        kertas_c.style.backgroundColor = "whitesmoke";
 
-        document.getElementById("hasil").classList.remove('draw');
-        document.getElementById("hasil").classList.remove('pwin');
-        document.getElementById("hasil").classList.remove('cwin');
+        play_result.classList.remove('draw');
+        play_result.classList.remove('pwin');
+        play_result.classList.remove('cwin');
 
-        document.getElementById("hasil").classList.add('result');
+        play_result.classList.add('result');
+        play_result.innerHTML = "VS";
    
     }
 
