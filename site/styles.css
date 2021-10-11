@@ -383,6 +383,7 @@ justify-content: left;
     align-items: center;
     justify-content: center;
     padding-top: 1rem;
+    width: 100%;
 }
 
 .wrapper-3 {
