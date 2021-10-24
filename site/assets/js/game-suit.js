@@ -40,8 +40,9 @@ class Game{
             this.show = "COM WIN"
             this.result()
         }
-        console.log("computer pilih "+this.shuffle)
-        console.log("player pilih "+this.player_choose)
+
+        this._text_console()
+        
     }
 
     result(){
@@ -87,9 +88,12 @@ class Game{
 
         })
     }
+
+    _text_console(){
+        console.log("computer pilih "+this.shuffle)
+        console.log("player pilih "+this.player_choose)
+    }
 }
-
-
 
 class Human extends Game{
     constructor(comShuffle,shuffle,player_choose){
@@ -103,7 +107,7 @@ class Human extends Game{
         this.player_choose = 'batu';
         batu_p.style.backgroundColor = "gold"
         super.bet()
-        this.comBg()
+        this._comBg()
         this.compare()
         this.freeze()
         })
@@ -114,7 +118,7 @@ class Human extends Game{
         this.player_choose = 'gunting';
         gunting_p.style.backgroundColor = "gold"
         super.bet()
-        this.comBg()
+        this._comBg()
         this.compare()
         this.freeze()
         })
@@ -126,13 +130,13 @@ class Human extends Game{
         this.player_choose = 'kertas'
         kertas_p.style.backgroundColor = "gold"
         super.bet()
-        this.comBg()
+        this._comBg()
         this.compare()
         this.freeze()
         })
     }  
 
-    comBg(){
+    _comBg(){
         if(this.shuffle == 'batu'){
             batu_c.style.backgroundColor = "gold";
         }else if (this.shuffle == 'kertas'){
