@@ -10,9 +10,8 @@ const reload = document.getElementById("refresh-p-click");
 
 
 class Game{
-    constructor(comShuffle,shuffle, show,comChoose,play_result){
+    constructor(comShuffle, show,comChoose,play_result){
         this.comShuffle = comShuffle
-        this.shuffle = shuffle
         this.comChoose = comChoose
         this.play_result = play_result
         this.show = show
@@ -20,17 +19,17 @@ class Game{
 
     bet(){
         const comShuffle = ['batu', 'kertas', 'gunting'];
-        this.shuffle = comShuffle[Math.floor(Math.random() * comShuffle.length)];
+        this.comChoose = comShuffle[Math.floor(Math.random() * comShuffle.length)];
     }
 
-    compare(){
-        if(this.player_choose == this.shuffle){
+    logic(){
+        if(this.player_choose === this.comChoose){
             this.play_result = 'draw'
             this.show = "DRAW"
             this.result()
             this
         }else if (
-            (this.player_choose == "batu" && this.shuffle == "gunting") || (this.player == "gunting" && this.shuffle == "kertas") || (this.player == "kertas" && shuffle == "batu")
+            (this.player_choose === "batu" && this.comChoose === "gunting") || (this.player_choose === "gunting" && this.comChoose === "kertas") || (this.player_choose === "kertas" && this.comChoose === "batu")
             ){
                 this.play_result = 'pwin'
                 this.show = "PLAYER 1 WIN"
@@ -53,16 +52,9 @@ class Game{
     }
 
     freeze(){
-        if(this.player_choose == 'batu'){
-            gunting_p.style.pointerEvents = "none"
-            kertas_p.style.pointerEvents = "none"
-        }else if (this.player_choose == 'kertas'){
-            gunting_p.style.pointerEvents = "none"
-            batu_p.style.pointerEvents = "none"
-        }else{
-            batu_p.style.pointerEvents = "none"
-            kertas_p.style.pointerEvents = "none"
-        }
+        batu_p.style.pointerEvents = "none"
+        gunting_p.style.pointerEvents = "none"
+        kertas_p.style.pointerEvents = "none"
     }
 
     refresh(){
@@ -85,19 +77,22 @@ class Game{
 
         result_show.classList.add('result');
         result_show.innerHTML = "VS";
+        
+        this.player_choose=''
+        this.shuffle=''
 
         })
     }
 
     _text_console(){
-        console.log("computer pilih "+this.shuffle)
+        console.log("computer pilih "+this.comChoose)
         console.log("player pilih "+this.player_choose)
     }
 }
 
 class Human extends Game{
-    constructor(comShuffle,shuffle,player_choose){
-        super(comShuffle,shuffle)
+    constructor(comShuffle,comChoose,player_choose){
+        super(comShuffle,comChoose)
         this.player_choose = player_choose
        
     }
@@ -108,7 +103,7 @@ class Human extends Game{
         batu_p.style.backgroundColor = "gold"
         super.bet()
         this._comBg()
-        this.compare()
+        this.logic()
         this.freeze()
         })
     }
@@ -119,7 +114,7 @@ class Human extends Game{
         gunting_p.style.backgroundColor = "gold"
         super.bet()
         this._comBg()
-        this.compare()
+        this.logic()
         this.freeze()
         })
     }
@@ -131,15 +126,15 @@ class Human extends Game{
         kertas_p.style.backgroundColor = "gold"
         super.bet()
         this._comBg()
-        this.compare()
+        this.logic()
         this.freeze()
         })
     }  
 
     _comBg(){
-        if(this.shuffle == 'batu'){
+        if(this.comChoose == 'batu'){
             batu_c.style.backgroundColor = "gold";
-        }else if (this.shuffle == 'kertas'){
+        }else if (this.comChoose == 'kertas'){
             kertas_c.style.backgroundColor = "gold";
         }else{
             gunting_c.style.backgroundColor = "gold";
