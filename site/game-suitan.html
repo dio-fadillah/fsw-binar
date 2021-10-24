@@ -34,22 +34,19 @@
     <div class="wrapper wrapper-3">
       <div class="user">
         
-        <!--Player Area-->
         <div class="box-4">
           <p>PLAYER</p>
         </div>
         
-        <div class="box-3" id="batu-p">
-          <img class="suit" src="./assets/games/batu.png" value="BATU" onclick="choose(this)">
+        <div class="box-3" id="batu-p" value='batu'>
+          <img class="suit" src="./assets/games/batu.png">
         </div>
 
-        <div class="box-3" id="kertas-p">
-          <img class="suit" src="./assets/games/kertas.png" value="KERTAS" onclick="choose(this)">
-        </div>
+        <div class="box-3" id="kertas-p" value='kertas'>
+          <img class="suit" src="./assets/games/kertas.png"></div>
 
-        <div class="box-3" id="gunting-p">
-          <img class="suit" src="./assets/games/gunting.png" value="GUNTING" onclick="choose(this)">
-        </div>
+        <div class="box-3" id="gunting-p" value='gunting'>
+          <img class="suit" src="./assets/games/gunting.png"></div>
       </div>
       <!--End of Player Area-->
 
@@ -65,15 +62,15 @@
           <p>COM</p>
         </div>
         
-        <div class="box-3" id="batu-c">
+        <div class="box-3" id="batu-c" value='batu'>
           <img class="suit" src="./assets/games/batu.png">
         </div>
 
-        <div class="box-3" id="kertas-c">
+        <div class="box-3" id="kertas-c" value='kertas'>
           <img class="suit" src="./assets/games/kertas.png">
         </div>
 
-        <div class="box-3" id="gunting-c">
+        <div class="box-3" id="gunting-c" value='gunting'>
           <img class="suit" src="./assets/games/gunting.png">
         </div>   
         <!--End of COM Area-->
@@ -87,16 +84,16 @@
   <div class="container-game">
     <div class="wrapper wrapper-3">
       <div class="refresh">
-        <div class="box-2" id="ref">
-          <img class ="ref-btn" src="assets/games/refresh.png" value="refresh" onclick="refresh(this)" id="refresh-p-click">
+        <div class="box-2" id="refresh">
+          <img class ="ref-btn" src="assets/games/refresh.png" id="refresh-p-click">
         </div>  
       </div>   
   </div>
   <!--end of refresh Area-->
 
 
-  <script choose src="./assets/js/game-suit.js"></script>
-  <script refresh src="./assets/js/game-suit.js"></script>
+ 
+  <script src="./assets/js/game-suit.js"></script>
 
 
 </body>

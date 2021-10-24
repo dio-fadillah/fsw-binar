@@ -1,72 +1,71 @@
-var gunting_c = document.getElementById("gunting-c")
-var batu_c = document.getElementById("batu-c")
-var kertas_c = document.getElementById("kertas-c")
+const gunting_c = document.getElementById("gunting-c")
+const batu_c = document.getElementById("batu-c")
+const kertas_c = document.getElementById("kertas-c")
 
-var gunting_p = document.getElementById("gunting-p")
-var batu_p = document.getElementById("batu-p")
-var kertas_p = document.getElementById("kertas-p")
-var play_result = document.getElementById("hasil");
+const gunting_p = document.getElementById("gunting-p")
+const batu_p = document.getElementById("batu-p")
+const kertas_p = document.getElementById("kertas-p")
+const result_show = document.getElementById("hasil");
+const reload = document.getElementById("refresh-p-click");
 
-function choose(element){
-    player = (element.getAttribute("value"));
-    com = Math.floor(Math.random() * 101);
 
-    if (player == "BATU"){
-        batu_p.style.backgroundColor = "gold";
-        gunting_p.style.pointerEvents = 'none';
-        kertas_p.style.pointerEvents = 'none';
-        batu_p.style.pointerEvents = 'none';
-
-    }else if(player == "GUNTING"){
-        gunting_p.style.backgroundColor = "gold";
-        gunting_p.style.pointerEvents = 'none';
-        kertas_p.style.pointerEvents = 'none';
-        batu_p.style.pointerEvents = 'none';
-
-    }else{
-        kertas_p.style.backgroundColor = "gold";
-        gunting_p.style.pointerEvents = 'none';
-        kertas_p.style.pointerEvents = 'none';
-        batu_p.style.pointerEvents = 'none';
+class Game{
+    constructor(comShuffle,shuffle, show,comChoose,play_result){
+        this.comShuffle = comShuffle
+        this.shuffle = shuffle
+        this.comChoose = comChoose
+        this.play_result = play_result
+        this.show = show
     }
 
-    //ambil pilihan computer
-    if (com <= 33 && com >0) {
-        com_choose = "BATU"
-        batu_c.style.backgroundColor = "gold";
-        
-    } else if (com >33 && com<=66){
-        com_choose = "GUNTING"
-        gunting_c.style.backgroundColor = "gold";
-       
-    } else {
-        com_choose = "KERTAS"
-        kertas_c.style.backgroundColor = "gold";        
+    bet(){
+        const comShuffle = ['batu', 'kertas', 'gunting'];
+        this.shuffle = comShuffle[Math.floor(Math.random() * comShuffle.length)];
     }
 
-    //logic game suitnynya
-    if (player == com_choose){
-        play_result.classList.add('draw');
-        play_result.innerHTML = "DRAW";
-        console.log("Pilihan dari COM adalah " + com_choose + " random com value " + com + " dan Player Pilih " + player + " hasil main seri");
-        
-    } else if (
-        (player == "BATU" && com_choose == "GUNTING") || (player == "GUNTING" && com_choose == "KERTAS") || (player == "KERTAS" && com_choose == "BATU")
-        ){
-        play_result.classList.remove('result');
-        play_result.classList.add('pwin');
-        play_result.innerHTML = "PLAYER 1 WIN";
-        console.log("Pilihan dari COM adalah " + com_choose + " random com value " + com + " dan Player Pilih " + player + " hasil main player menang");
-        
-    } else {
-        play_result.classList.remove('result');
-        play_result.classList.add('cwin');
-        play_result.innerHTML = "COM WIN";
-        console.log("Pilihan dari COM adalah " + com_choose + " random com value " + com + " dan Player Pilih " + player + " hail main computer menang");       
+    compare(){
+        if(this.player_choose == this.shuffle){
+            this.play_result = 'draw'
+            this.show = "DRAW"
+            this.result()
+            this
+        }else if (
+            (this.player_choose == "batu" && this.shuffle == "gunting") || (this.player == "gunting" && this.shuffle == "kertas") || (this.player == "kertas" && shuffle == "batu")
+            ){
+                this.play_result = 'pwin'
+                this.show = "PLAYER 1 WIN"
+                this.result()
+        }else{
+            this.play_result = 'cwin'
+            this.show = "COM WIN"
+            this.result()
+        }
+        console.log("computer pilih "+this.shuffle)
+        console.log("player pilih "+this.player_choose)
     }
-} 
 
-function refresh(element){
+    result(){
+        result_show.classList.remove('result')
+        result_show.classList.add(this.play_result)
+        result_show.innerHTML = this.show;  
+        console.log(this.show)
+    }
+
+    freeze(){
+        if(this.player_choose == 'batu'){
+            gunting_p.style.pointerEvents = "none"
+            kertas_p.style.pointerEvents = "none"
+        }else if (this.player_choose == 'kertas'){
+            gunting_p.style.pointerEvents = "none"
+            batu_p.style.pointerEvents = "none"
+        }else{
+            batu_p.style.pointerEvents = "none"
+            kertas_p.style.pointerEvents = "none"
+        }
+    }
+
+    refresh(){
+        reload.addEventListener("click", () => {
         gunting_p.style.pointerEvents = 'auto';
         kertas_p.style.pointerEvents = 'auto';
         batu_p.style.pointerEvents = 'auto';
@@ -79,14 +78,78 @@ function refresh(element){
         gunting_c.style.backgroundColor = "whitesmoke";
         kertas_c.style.backgroundColor = "whitesmoke";
 
-        play_result.classList.remove('draw');
-        play_result.classList.remove('pwin');
-        play_result.classList.remove('cwin');
+        result_show.classList.remove('draw');
+        result_show.classList.remove('pwin');
+        result_show.classList.remove('cwin');
 
-        play_result.classList.add('result');
-        play_result.innerHTML = "VS";
-   
+        result_show.classList.add('result');
+        result_show.innerHTML = "VS";
+
+        })
     }
+}
+
+
+
+class Human extends Game{
+    constructor(comShuffle,shuffle,player_choose){
+        super(comShuffle,shuffle)
+        this.player_choose = player_choose
+       
+    }
+    
+    batu(){
+        batu_p.addEventListener("click", () => {
+        this.player_choose = 'batu';
+        batu_p.style.backgroundColor = "gold"
+        super.bet()
+        this.comBg()
+        this.compare()
+        this.freeze()
+        })
+    }
+
+    gunting(){
+        gunting_p.addEventListener("click", () => {
+        this.player_choose = 'gunting';
+        gunting_p.style.backgroundColor = "gold"
+        super.bet()
+        this.comBg()
+        this.compare()
+        this.freeze()
+        })
+    }
+
+    kertas(){
+        super.bet();
+        kertas_p.addEventListener("click", () => {
+        this.player_choose = 'kertas'
+        kertas_p.style.backgroundColor = "gold"
+        super.bet()
+        this.comBg()
+        this.compare()
+        this.freeze()
+        })
+    }  
+
+    comBg(){
+        if(this.shuffle == 'batu'){
+            batu_c.style.backgroundColor = "gold";
+        }else if (this.shuffle == 'kertas'){
+            kertas_c.style.backgroundColor = "gold";
+        }else{
+            gunting_c.style.backgroundColor = "gold";
+        }
+    }
+}
+
+const play = new Human();
+play.batu()
+play.kertas()
+play.gunting()
+
+const repeat = new Game()
+repeat.refresh()
 
 
 
