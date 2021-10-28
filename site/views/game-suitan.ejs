@@ -1,0 +1,100 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Suitan</title>
+    <link rel="shortcut icon" type="image/png" href="./assets/img/favicon.ico"/>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" type="text/css" />
+    <!-- <script src="./assets/js/jquery.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+  <!--navbar-->
+  <div class="container-fluid" style="background-color:black; opacity: 0.8;">
+    <div class="wrapper-2">
+      <div class="upper-link" id="kembali">
+       <a href="index.html"><ion-icon name="arrow-back-outline" size="large"></ion-icon></a>
+      </div>
+
+      <div class="upper-link">
+        <img class="upper-suit" src="./assets/games/favpng_rock-paper-scissors-steemit-logo.png">
+      </div><div class="wrapper-2"></div>
+
+      <div class="upper-link" style="margin-top: 1rem;" id="kembali"><p>ROCK PAPER SCISSOR</p></div>
+    </div>
+  </div>
+  <!--end of navbar-->
+
+  <!--Gunting Batu Kertas Area-->
+  <div class="container-game">
+    <div class="wrapper wrapper-3">
+      <div class="user">
+        
+        <div class="box-4">
+          <p>PLAYER</p>
+        </div>
+        
+        <div class="box-3" id="batu-p" value='batu'>
+          <img class="suit" src="./assets/games/batu.png">
+        </div>
+
+        <div class="box-3" id="kertas-p" value='kertas'>
+          <img class="suit" src="./assets/games/kertas.png"></div>
+
+        <div class="box-3" id="gunting-p" value='gunting'>
+          <img class="suit" src="./assets/games/gunting.png"></div>
+      </div>
+      <!--End of Player Area-->
+
+      <!--Result Area-->
+      <div class="mid">
+        <div class="result" id="hasil">VS</div>
+      </div>   
+      <!--End of Result Area-->
+
+      <div class="com">
+         <!--COM Area-->
+        <div class="box-4">
+          <p>COM</p>
+        </div>
+        
+        <div class="box-3" id="batu-c" value='batu'>
+          <img class="suit" src="./assets/games/batu.png">
+        </div>
+
+        <div class="box-3" id="kertas-c" value='kertas'>
+          <img class="suit" src="./assets/games/kertas.png">
+        </div>
+
+        <div class="box-3" id="gunting-c" value='gunting'>
+          <img class="suit" src="./assets/games/gunting.png">
+        </div>   
+        <!--End of COM Area-->
+      </div>
+    </div>
+  </div>
+
+  <!--End of Gunting Batu Kertas Area-->
+
+  <!--refresh Area-->
+  <div class="container-game">
+    <div class="wrapper wrapper-3">
+      <div class="refresh">
+        <div class="box-2" id="refresh">
+          <img class ="ref-btn" src="assets/games/refresh.png" id="refresh-p-click">
+        </div>  
+      </div>   
+  </div>
+  <!--end of refresh Area-->
+
+
+ 
+  <script src="./assets/js/game-suit.js"></script>
+
+
+</body>
+</html>
