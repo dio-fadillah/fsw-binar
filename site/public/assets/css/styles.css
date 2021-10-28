@@ -76,7 +76,7 @@
 
 /*background-sections-start*/
 .bg-image1{
-    background: url(./assets/img/main-bg.jpg);
+    background: url(/assets/img/main-bg.jpg);
     background-size: cover;
     background-position: bottom center;
     height: 100%;
@@ -84,7 +84,7 @@
 }
 
 .bg-image2{
-    background: url(./assets/img/the-games-bg.jpg);
+    background: url(/assets/img/the-games-bg.jpg);
     background-size: cover;
     background-position: bottom center;
     height: 100%;
@@ -92,7 +92,7 @@
 }
 
 .bg-image3{
-    background: url(./assets/img/features.png);
+    background: url(/assets/img/features.png);
     background-size: cover;
     background-position: top center;
     height: 100%;
@@ -100,7 +100,7 @@
 }
 
 .bg-image4{
-    background: url(./assets/img/requirements.png);
+    background: url(/assets/img/requirements.png);
     background-size: cover;
     background-position: center;
     height: 100%;
@@ -108,7 +108,7 @@
 }
 
 .bg-image5{
-    background: url(./assets/img/top-score-bg.jpg);
+    background: url(/assets/img/top-score-bg.jpg);
     background-size: cover;
     background-position: center;
     height: 100%;
@@ -116,7 +116,7 @@
 }
 
 .bg-image6{
-    background: url(./assets/img/newsletter.jpg);
+    background: url(/assets/img/newsletter.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
