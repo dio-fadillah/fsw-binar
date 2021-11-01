@@ -10,9 +10,23 @@ router.get('/game-suitan', (req,res) =>{
     res.render('game-suitan')
 });
 
-//error not found 404
-router.use((req,res)=>{
-    res.status(404).render('index')
-})
+
+router.get('/login', (req,res) =>{
+    res.render('login')
+});
+
+router.get('/protected', (req,res) =>{
+    res.render('protected')
+});
+
+router.get('/unprotected', (req,res) =>{
+    res.render('unprotected')
+});
+
+
+// //error not found 404
+// router.use((req,res)=>{
+//     res.status(404).render('index')
+// })
 
 module.exports = router;
