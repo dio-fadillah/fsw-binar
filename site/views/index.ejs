@@ -43,7 +43,7 @@
                         </ul>
                         <ul class="navbar-nav offset-md-5">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="wa.me/087821433077">Sign Up</a>
+                            <a class="nav-link active" aria-current="page" href="/sug">Sign Up</a>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="/login">Login</a>
                         </li>            
@@ -300,18 +300,16 @@
         
                 <div class="col-md-4" style="padding-top: 10rem;">
                   <h5 class="section-title">Newsletter & Contact Us</h5>s      
-                  <form>
-                    <div class="col-md-6">
-                      <label for="exampleInputEmail1" class="content-text">Email address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                        <br>
-                    </div>
-
-                    <div class="col-md-8">
-                        <a class="btn btn-warning btn-lg" href="#contacts" role="button">Connect With Us</a>
-                    </div>
-                   
-                  </form>
+                    <form method="POST" action="/subscribe">
+                        <div class="col-md-6">
+                            <label for="exampleInputEmail1" class="content-text">Email address</label>
+                            <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        </div>  
+                          
+                        <div class="col-md-8">
+                            <button type="submit" class="btn btn-primary">Connect With Us</button>
+                        </div> 
+                    </form>
                 </div>   
             </div>
         </div>

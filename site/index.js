@@ -30,6 +30,11 @@ app.post('/login',(req,res)=>{
     }
 })
 
+app.post('/subscribe',(req,res)=>{
+    const {email} = req.body;
+    res.json(email);
+})
+
 
 app.listen(port, ()=>{
     console.log('jalan servernya')
