@@ -85,9 +85,7 @@ app.post('/update/:id', (req, res) => {
     where: { id: req.params.id }
     })
     .then(user => {
-        res.render('edit', {
-            user
-        })
+        res.redirect('/dashboard')
     })
 })
 
