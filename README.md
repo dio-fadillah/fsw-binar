@@ -4,3 +4,6 @@ Current challenge focus on implementation and use of HTML, CSS, javascript and B
 
 
 -update with chapter 4 challenge, adding web based game on rock paper scissors.  Try using OOP, encapsulation, and inheritance
+
+
+https://sequelize.org/master/manual/naming-strategies.html#overriding-singulars-and-plurals-when-defining-aliases 

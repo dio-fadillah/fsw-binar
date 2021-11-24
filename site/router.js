@@ -15,14 +15,21 @@ router.get('/login', (req,res) =>{
     res.render('login')
 });
 
-router.get('/protected', (req,res) =>{
-    res.render('protected')
+router.get('/logout', (req,res) =>{
+    res.render('index')
+});
+
+router.get('/dashboard', (req,res) =>{
+    res.render('dashboard')
 });
 
 router.get('/unprotected', (req,res) =>{
     res.render('unprotected')
 });
 
+// router.get('/edit', (req,res) =>{
+//     res.render('edit')
+// });
 
 // //error not found 404
 // router.use((req,res)=>{

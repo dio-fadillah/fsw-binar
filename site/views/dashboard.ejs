@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>User Dashboard | All</title>
+<link rel="shortcut icon" type="image/png" href="./assets/img/favicon.ico"/>
+<link rel="stylesheet" href="./assets/css/bootstrap.min.css" type="text/css" />
+<script src="/assets/js/jquery.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="assets/css/styles.css" />
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+
+    <table style="width: 100%;">
+        <tr>
+            <button type="submit" class="btn btn-primary">Create</button>
+        </tr>
+
+        <tr>
+            <th>id</th>
+            <th>Username</th>
+            <th>Role</th>
+            <th>Command</th>
+        </tr>
+    
+        <% users.forEach(i => { %>
+            <tr>
+                <td><%= i.id %></td>
+                <td><%= i.username %></td>
+                <td><%= i.role %></td>
+            
+            <td>
+                <button type="submit" class="btn btn-primary">Edit</button>
+                <button type="submit" class="btn btn-warning">Delete</button>
+            </td>
+            </tr>
+            <% }) %>
+
+            <tr>
+                <a href="/logout" class="btn btn-primary">Logout</a>
+            </tr>
+    </table>
+
+
+</body>
+</html>

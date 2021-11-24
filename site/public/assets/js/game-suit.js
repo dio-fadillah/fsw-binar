@@ -8,6 +8,9 @@ const kertas_p = document.getElementById("kertas-p")
 const result_show = document.getElementById("hasil");
 const reload = document.getElementById("refresh-p-click");
 
+const { Historical } = require('../models')
+
+
 
 class Game{
     constructor(comShuffle, show,comChoose,play_result){
@@ -27,17 +30,41 @@ class Game{
             this.play_result = 'draw'
             this.show = "DRAW"
             this.result()
-            this
+
+            app.post('/result', (req, res) => {
+                Historical.create({
+                    nama_game: 'game suit',
+                    username: req.body.play_result
+                })
+            })
+            
+            
         }else if (
             (this.player_choose === "batu" && this.comChoose === "gunting") || (this.player_choose === "gunting" && this.comChoose === "kertas") || (this.player_choose === "kertas" && this.comChoose === "batu")
             ){
                 this.play_result = 'pwin'
                 this.show = "PLAYER 1 WIN"
                 this.result()
+                
+                app.post('/result', (req, res) => {
+                    Historical.create({
+                        nama_game: 'game suit',
+                        username: req.body.play_result
+                    })
+                })
+                
         }else{
             this.play_result = 'cwin'
             this.show = "COM WIN"
             this.result()
+            
+            app.post('/result', (req, res) => {
+                Historical.create({
+                nama_game: 'game suit',
+                username: req.body.play_result
+                })
+            })
+            
         }
 
         this._text_console()
@@ -146,6 +173,10 @@ const play = new Human();
 play.batu()
 play.kertas()
 play.gunting()
+
+
+
+
 
 const repeat = new Game()
 repeat.refresh()
