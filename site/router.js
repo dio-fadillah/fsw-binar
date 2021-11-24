@@ -19,13 +19,8 @@ router.get('/logout', (req,res) =>{
     res.render('index')
 });
 
-router.get('/dashboard', (req,res) =>{
-    res.render('dashboard')
-});
 
-router.get('/unprotected', (req,res) =>{
-    res.render('unprotected')
-});
+
 
 // router.get('/edit', (req,res) =>{
 //     res.render('edit')

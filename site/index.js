@@ -1,6 +1,6 @@
 const express= require('express')
 const app = express();
-const port = 3020;
+const port = 3030;
 const router = require('./router')
 const { User } = require('./models')
 const { Profile } = require('./models');
@@ -17,13 +17,10 @@ app.get('/signup', (req,res) =>{
     res.render('signup')
 });
 
-app.post('/signup', (req, res) => {
-    User.create({
-    username: "user2",
-    password: 12345
-    })
+app.get('/create', (req,res) =>{
+    res.render('create')
+});
 
-})
 
 const users = [
     {
@@ -39,19 +36,13 @@ app.post('/login',(req,res)=>{
     let Password = users.find(user => user.password === password)
     console.log(Email)
     if (Email){
-        res.redirect('/berita')
+        res.redirect('/dashboard')
     }else{
-        res.redirect("/unprotected")
+        res.redirect('/unprotected')
     }
 })
 
-app.post('/subscribe',(req,res)=>{
-    const {email} = req.body;
-    res.json(email);
-})
-
-
-app.get('/berita', (req, res) => {
+app.get('/dashboard', (req, res) => {
     User.findAll()
     .then(users => {
     res.render('dashboard', {
@@ -60,14 +51,79 @@ app.get('/berita', (req, res) => {
     })
 })
 
-app.get('/edit', (req, res) => {
-    User.findAll()
-    .then(users => {
-    res.render('edit', {
-    users
+app.get('/unprotected', (req,res) =>{
+    res.render('unprotected')
+});
+
+app.post('/subscribe',(req,res)=>{
+    const {email} = req.body;
+    res.json(email);
+})
+
+
+app.post('/create', (req, res) => {
+    User.create({
+    username: req.body.username,
+    password: req.body.password,
+    role: req.body.role
     })
+
+    .then(user => {
+        res.redirect('/dashboard')
+    })
+   
+})
+
+
+
+app.post('/update/:id', (req, res) => {
+    User.update({
+    username: req.body.username,
+    password: req.body.password,
+    role: req.body.role
+    }, {
+    where: { id: req.params.id }
+    })
+    .then(user => {
+        res.render('edit', {
+            user
+        })
     })
 })
+
+app.get('/delete/:id', (req, res) => {
+    User.destroy({
+        where: { id: req.params.id }
+        })
+        .then(user => {
+            res.redirect('/dashboard')
+        })
+})
+
+
+app.get('/update/:id', (req, res) => {
+    User.findOne({
+    where: { id: req.params.id }
+    })
+    .then(user => {
+    // res.status(200).json(user)
+    res.redirect('/dashboard')
+    })
+})
+
+app.get('/edit/:id', (req, res) => {
+    User.findOne({
+    where: { id: req.params.id }
+    })
+    .then(user => {
+    // res.status(200).json(user)
+    res.render('edit', {
+        user
+        })
+    })
+})
+
+
 
 app.listen(port, ()=>{
     // console.log('jalan servernya')
