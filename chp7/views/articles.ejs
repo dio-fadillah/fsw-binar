@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <%- include("partials/head"); %>
+<body>
+    <%- include("partials/navbar"); %>
+    <div class="container m-4">
+    <!-- Kita lakukan loop untuk menjalankan include untuk component article -->
+    <% articles.forEach(i => { %>
+    <div class="container mb-2">
+    <h1>
+    <%= i.title %> <span class="badge badge-primary"><%= i.id %></span>
+    </h1>
+    <p><%= i.body %></p>
+    <p><%= i.approved %></p>
+    </div>
+
+    
+    <% }) %>
+    </div>
+</body>
+</html>
