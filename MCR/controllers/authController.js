@@ -16,13 +16,18 @@ module.exports = {
     },
 
     login: passport.authenticate('local', {
-        successRedirect: '/gamesuit',
+        successRedirect: '/loginarea',
         failureRedirect: '/login',
         failureFlash: true // Untuk mengaktifkan express flash
     }),
 
     gamesuit: (req, res) => {
         res.render('game-suitan', req.user.dataValues)
+        
+    },
+
+    gamesuit2: (req, res) => {
+        res.render('game-suitan2', req.user.dataValues)
         
     }
 

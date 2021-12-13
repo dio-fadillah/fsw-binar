@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <%- include("partials/head"); %>
+</head>
+<body>
+    <!--homepage-start-->
+    <div class="container-fluid" id="home">
+        <!--Background-->
+        <div class="bg-image1">                
+            
+            <!--Navbar-->
+            <div class="row" id="navbar-big">
+                <%- include("partials/navbar"); %>
+            </div>
+            
+            <!--Jumbotron-->
+            <div class="container-game">
+                <div class="login">
+
+                    <!-- Email input -->
+                    <div class="form-outline mb-4">
+                        <p>Choose Playing Mode</p>
+
+                        <a href="/single" class="btn btn-primary">Single Player</a>
+                        <a href="/multi" class="btn btn-warning">Multi Player</a>
+                        
+                    </div>
+  
+                </div>
+            </div>  
+        </div>
+    </div>
+    <!--homepage-end-->
+
+    <!-- <script gamePlay src="/javascripts/loginarea.js"></script> -->
+</body>
+</html>

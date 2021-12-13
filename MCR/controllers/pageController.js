@@ -21,6 +21,14 @@ module.exports = {
         res.render('game-suitan')
     },
 
+    gamesuit2 :(req, res) => {
+        res.render('game-suitan2')
+    },
+
+    loginarea :(req, res) => {
+        res.render('loginarea')
+    },
+
     dashboard :(req, res) => {
         User.findAll()
         .then(users => {
@@ -64,6 +72,14 @@ module.exports = {
         .then(user => {
             res.redirect('/dashboard')
         })
+    },
+    
+    single :(req,res)=>{
+        res.redirect('/gamesuit')
+    },
+
+    multi :(req,res)=>{
+        res.redirect('/gamesuit2')
     }
     
 }
