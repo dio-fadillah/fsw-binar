@@ -2,7 +2,7 @@ const { User } = require('../models')
 
 module.exports = {
     home : (req, res) => {
-        res.render("index")
+        res.render("/default/home")
     },
 
     login : (req,res) =>{

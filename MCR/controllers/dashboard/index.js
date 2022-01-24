@@ -1,12 +1,13 @@
-module.exports={
-    home: (req,res) =>{
+module.exports = {
+    
+    home: (req,res) => {
         const locals = {
-            data: [{post:10, visitor:100, Reader:10}],
+            data: [{Post:10, Visitor:100, Reader:10}],
             contentName: 'Statistic',
-            layout: 'layout/dashboard'
-
+            layout: 'layouts/dashboard'                  
         }
-        res.render('/dashboard/home', locals)
+    res.render('pages/dashboard/home', locals)
     },
+
     post: require('./post')
 }

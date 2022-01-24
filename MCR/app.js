@@ -6,8 +6,9 @@ const logger = require('morgan');
 // const passport = require('./lib/passport');
 const flash = require('express-flash')
 const session = require("express-session");
-const router = require('./routes');
+const router = require('./router');
 const app = express();
+const expressLayout = require('express-ejs-layouts')
 
 
 // view engine setup
@@ -20,7 +21,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.use(expressLayout)
+app.use(expressLayout)
 app.set('layout', 'layout/default')
 app.use(session({
   secret: 'Buat ini jadi rahasia',
