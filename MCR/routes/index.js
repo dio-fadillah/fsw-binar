@@ -29,5 +29,7 @@ router.get("/loginarea", page.loginarea);
 router.get("/single", page.single);
 router.get("/multi", page.multi);
 
+const dashboard = require('./dashboard')
+router.use('/dashboard',dashboard)
 
 module.exports = router;
